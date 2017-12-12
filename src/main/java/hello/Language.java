@@ -58,9 +58,9 @@ public class Language implements Serializable {
     @Temporal(TemporalType.TIMESTAMP)
     private Date lastUpdate;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "languageId", fetch = FetchType.LAZY)
-    private List<Film> filmList;
+    private transient List<Film> filmList;
     @OneToMany(mappedBy = "originalLanguageId", fetch = FetchType.LAZY)
-    private List<Film> filmList1;
+    private transient List<Film> filmList1;
 
     public Language() {
     }
